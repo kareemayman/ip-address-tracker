@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import '../scss/main.scss'
+import Header from "@/components/Header";
 
 export const metadata: Metadata = {
   title: "IP Address Tracker",
@@ -14,6 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <Header></Header>
         {children}
       </body>
     </html>
