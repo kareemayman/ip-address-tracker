@@ -10,6 +10,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <title>Ip Address Tracker</title>
+      </head>
       <body>
         <IpProvider>
           <Header></Header>

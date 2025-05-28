@@ -2,6 +2,10 @@
 @use "globals";
 @use "mixins" as *;
 
+body {
+  position: relative;
+}
+
 header {
   background-image: url("../../images/pattern-bg-desktop.png");
   background-repeat: no-repeat;
@@ -10,7 +14,6 @@ header {
 
   .container {
     padding: 40px 0 120px;
-    position: relative;
 
     h1 {
       width: fit-content;
@@ -68,9 +71,9 @@ header {
 
     .info {
       position: absolute;
-      bottom: 0;
+      top: 320px;
       left: 50%;
-      translate: -50% 50%;
+      translate: -50% -50%;
       background-color: white;
       display: flex;
       align-items: center;
@@ -79,6 +82,7 @@ header {
       width: 70vw;
       min-width: 900px;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      z-index: 10;
 
       h5 {
         color: var(--Dark-Gray);
@@ -137,4 +141,6 @@ header {
 div#map {
   width: 100%;
   height: calc(100dvh - 320px);
+  position: absolute;
+  z-index: -3;
 }

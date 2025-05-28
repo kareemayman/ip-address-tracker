@@ -1,11 +1,24 @@
-import { Metadata } from "next"
-import React from "react"
+"use client"
 
-export const metadata: Metadata = {
-  title: "IP Address Tracker",
-  description: "Frontend Mentor Challenge",
-}
+import React, { useContext } from "react"
+import dynamic from "next/dynamic"
+import { IpContext } from "@/context/IpContext"
 
-export default async function Home() {
-  return <div>Home</div>
+// Avoid SSR with dynamic import
+const IpMap = dynamic(() => import("@/components/IpMap"), {
+  ssr: false,
+})
+
+export default function Map() {
+  const ipInfo = useContext(IpContext)
+
+  const newObj = {
+    ip: ipInfo.ip,
+    latitude: ipInfo.location.lat,
+    longitude: ipInfo.location.lng,
+    city: ipInfo.location.city,
+    country_name: ipInfo.location.country,
+  }
+
+  return <IpMap ipInfo={newObj}></IpMap>
 }
