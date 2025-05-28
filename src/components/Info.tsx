@@ -1,23 +1,11 @@
-import { IpInfo } from "@/types/types"
-import React from "react"
+"use client"
 
-export default async function Info() {
-  const ipInfo: IpInfo = await fetch("https://api.ipify.org?format=json")
-    .then((res) => res.json())
-    .then((data) => {
-      const ip = data.ip
-      return fetch(
-        `https://geo.ipify.org/api/v2/country,city?apiKey=${process.env.IPIFY_API_KEY}&ipAddress=${ip}`
-      )
-    })
-    .then((res) => res.json())
-    .then((data) => {
-      return data
-    })
-    .catch((error) => {
-      console.error("Error fetching data:", error)
-      return null
-    })
+import { IpContext } from "@/context/IpContext"
+import { IpInfo } from "@/types/types"
+import React, { useContext } from "react"
+
+export default function Info() {
+  const ipInfo = useContext<IpInfo>(IpContext)
 
   return (
     <div className="info">
