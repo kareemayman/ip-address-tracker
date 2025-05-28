@@ -1,134 +1,140 @@
-@use 'variables';
-@use 'globals';
-@use 'mixins' as *;
+@use "variables";
+@use "globals";
+@use "mixins" as *;
 
 header {
-    background-image: url("../../images/pattern-bg-desktop.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+  background-image: url("../../images/pattern-bg-desktop.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 
-    .container {
-        padding: 40px 0 120px;
-        position: relative;
-        
-        h1 {
-            width: fit-content;
-            margin-inline: auto;
-            color: white;
-            text-align: center;
-        }
+  .container {
+    padding: 40px 0 120px;
+    position: relative;
 
-        form {
-            width: fit-content;
-            position: relative;
-            margin: 30px auto;
-
-            input {
-                width: 600px;
-                padding: 20px;
-                outline: 0;
-                border: 1px solid var(--Very-Dark-Gray);
-                border-radius: 16px;
-                font-size: var(--font-size);
-
-                &::placeholder {
-                    color: var(--Dark-Gray);
-
-                    @include extra-small {
-                        color: transparent;
-                    }
-                }
-
-                @include mobile-down {
-                    width: 90vw;
-                    font-size: 14px;
-                }
-            }
-
-            button {
-                position: absolute;
-                translate: -100% 0;
-                height: 100%;
-                outline: 0;
-                border: 1px solid var(--Very-Dark-Gray);
-                border-top-right-radius: 16px;
-                border-bottom-right-radius: 16px;
-                cursor: pointer;
-                background-color: black;
-                @include inline-flex-center;
-                padding-inline: 25px;
-                transition: 0.3s;
-
-                &:hover {
-                    background-color: var(--Very-Dark-Gray);
-                }
-            }
-        }
-
-        .info {
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            translate: -50% 50%;
-            background-color: white;
-            display: flex;
-            align-items: center;
-            padding: 40px;
-            border-radius: 16px;
-            width: 70vw;
-            min-width: 900px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-
-            h5 {
-                color: var(--Dark-Gray);
-                letter-spacing: 1px;
-                margin-bottom: 15px;
-            }
-
-            h2 {
-                font-size: clamp(1.2rem, 3vw, 1.7rem);
-                margin-right: 30px;
-            }
-
-            div {
-                flex-basis: 25%;
-                padding-left: 30px;
-            }
-
-            div:not(:last-of-type) {
-                border-right: 1px solid var(--Dark-Gray);
-            }
-
-            @media (max-width: 992px) {
-                width: 90vw;
-                flex-direction: column;
-                top: 60%;
-                bottom: initial;
-                translate: -50% 0;
-                min-width: 0;
-
-                h5 {
-                    font-size: 0.7rem;
-                    margin-bottom: 10px;
-                }
-
-                h2, h5 {
-                    width: fit-content;
-                    margin-inline: auto;
-                    text-align: center;
-                }
-
-                div {
-                    flex-basis: 100%;
-                    padding-left: 0;
-                    padding-bottom: 20px;
-
-                    &:not(:last-of-type) {
-                        border-right: none;
-                    }
-                }
-            }
-        }
+    h1 {
+      width: fit-content;
+      margin-inline: auto;
+      color: white;
+      text-align: center;
     }
+
+    form {
+      width: fit-content;
+      position: relative;
+      margin: 30px auto;
+
+      input {
+        width: 600px;
+        padding: 20px;
+        outline: 0;
+        border: 1px solid var(--Very-Dark-Gray);
+        border-radius: 16px;
+        font-size: var(--font-size);
+
+        &::placeholder {
+          color: var(--Dark-Gray);
+
+          @include extra-small {
+            color: transparent;
+          }
+        }
+
+        @include mobile-down {
+          width: 90vw;
+          font-size: 14px;
+        }
+      }
+
+      button {
+        position: absolute;
+        translate: -100% 0;
+        height: 100%;
+        outline: 0;
+        border: 1px solid var(--Very-Dark-Gray);
+        border-top-right-radius: 16px;
+        border-bottom-right-radius: 16px;
+        cursor: pointer;
+        background-color: black;
+        @include inline-flex-center;
+        padding-inline: 25px;
+        transition: 0.3s;
+
+        &:hover {
+          background-color: var(--Very-Dark-Gray);
+        }
+      }
+    }
+
+    .info {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      translate: -50% 50%;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      padding: 40px;
+      border-radius: 16px;
+      width: 70vw;
+      min-width: 900px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+
+      h5 {
+        color: var(--Dark-Gray);
+        letter-spacing: 1px;
+        margin-bottom: 15px;
+      }
+
+      h2 {
+        font-size: clamp(1.2rem, 3vw, 1.7rem);
+        margin-right: 30px;
+      }
+
+      div {
+        flex-basis: 25%;
+        padding-left: 30px;
+      }
+
+      div:not(:last-of-type) {
+        border-right: 1px solid var(--Dark-Gray);
+      }
+
+      @media (max-width: 992px) {
+        width: 90vw;
+        flex-direction: column;
+        top: 60%;
+        bottom: initial;
+        translate: -50% 0;
+        min-width: 0;
+
+        h5 {
+          font-size: 0.7rem;
+          margin-bottom: 10px;
+        }
+
+        h2,
+        h5 {
+          width: fit-content;
+          margin-inline: auto;
+          text-align: center;
+        }
+
+        div {
+          flex-basis: 100%;
+          padding-left: 0;
+          padding-bottom: 20px;
+
+          &:not(:last-of-type) {
+            border-right: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+div#map {
+  width: 100%;
+  height: calc(100dvh - 320px);
 }

@@ -12,3 +12,13 @@ export type IpInfo = {
   }
   isp: string
 }
+
+export type IpMapProps = {
+  ipInfo: {
+    latitude: number
+    longitude: number
+    city?: string
+    country_name?: string
+    ip?: string
+  }
+}
